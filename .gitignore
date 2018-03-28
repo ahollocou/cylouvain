@@ -1,0 +1,11 @@
+*.pyc
+*.so
+*~
+.DS_Store
+build
+
+*.c
+*.cpp
+
+.idea
+.virtualenv*
