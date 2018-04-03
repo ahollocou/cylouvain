@@ -29,7 +29,7 @@ if USE_CYTHON:
     extensions = cythonize(extensions)
 
 setup(name='cylouvain',
-      version='0.0.1',
+      version='0.1.0',
       description='Cython implementation of the classic Louvain algorithm for community detection in graphs',
       url='http://github.com/ahollocou/cylouvain',
       author='Alexandre Hollocou',
