@@ -73,6 +73,41 @@ def best_partition(graph, resolution=1.):
 
 
 def modularity(partition, graph, resolution=1.):
+    """
+    Compute the modularity of a node partition of a graph.
+
+    Parameters
+    ----------
+    partition: dict
+       The partition of the nodes.
+       The keys of the dictionary correspond to the nodes and the values to the communities.
+
+    graph: networkx.Graph, scipy.csr_matrix or np.ndarray
+        The graph or its adjacency matrix (sparse or dense).
+
+    resolution: double, optional, default: 1.0
+        The resolution parameter in the modularity function.
+        This parameter corresponds to the time introduced in
+        "Laplacian Dynamics and Multiscale Modular Structure in Networks",
+        R. Lambiotte, J.-C. Delvenne, M. Barahona
+
+    Returns
+    -------
+    modularity : float
+       The modularity.
+
+    References
+    ----------
+
+    - Finding and evaluating community structure in networks, 2004
+      Newman, M. E. and Girvan, M.
+      Physical review E, 69(2), 026113.
+
+    Notes
+    -----
+    Uses optimized Cython code to compute modularity.
+
+    """
     if type(graph) == sparse.csr_matrix:
         adj_matrix = graph
     elif type(graph) == np.ndarray:
