@@ -40,6 +40,7 @@ def modularity(partition, graph, resolution=1.):
         adj_matrix = sparse.csr_matrix(graph)
     elif type(graph) == nx.classes.graph.Graph:
         adj_matrix = nx.adj_matrix(graph)
+        partition = {i: partition[node] for (i, node) in enumerate(graph.nodes())}
     else:
         raise TypeError(
             "The argument should be a NetworkX graph, a NumPy array or a SciPy Compressed Sparse Row matrix.")
