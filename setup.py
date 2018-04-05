@@ -17,12 +17,17 @@ AUTHOR_EMAIL = 'alexandre@hollocou.fr'
 URL = 'http://github.com/ahollocou/cylouvain'
 LICENSE = 'new BSD'
 
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    USE_CYTHON = False
+IS_RELEASE = True
+
+if not IS_RELEASE:
+    try:
+        from Cython.Build import cythonize
+    except ImportError:
+        USE_CYTHON = False
+    else:
+        USE_CYTHON = True
 else:
-    USE_CYTHON = True
+    USE_CYTHON = False
 
 
 class build_ext(_build_ext):
