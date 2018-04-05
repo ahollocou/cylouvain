@@ -11,3 +11,5 @@ build
 .virtualenv*
 
 *.egg-info
+
+*.tar.gz

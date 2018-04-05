@@ -11,18 +11,23 @@ DISTNAME = 'cylouvain'
 DESCRIPTION = 'Cython implementation of the classic Louvain algorithm for community detection in graphs'
 with open('README.rst') as f:
     LONG_DESCRIPTION = f.read()
-VERSION = '0.2.0'
+VERSION = '0.2.1'
 AUTHOR = 'Alexandre Hollocou'
 AUTHOR_EMAIL = 'alexandre@hollocou.fr'
 URL = 'http://github.com/ahollocou/cylouvain'
 LICENSE = 'new BSD'
 
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    USE_CYTHON = False
+IS_RELEASE = True
+
+if not IS_RELEASE:
+    try:
+        from Cython.Build import cythonize
+    except ImportError:
+        USE_CYTHON = False
+    else:
+        USE_CYTHON = True
 else:
-    USE_CYTHON = True
+    USE_CYTHON = False
 
 
 class build_ext(_build_ext):
