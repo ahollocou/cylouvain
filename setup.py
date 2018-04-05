@@ -11,7 +11,7 @@ DISTNAME = 'cylouvain'
 DESCRIPTION = 'Cython implementation of the classic Louvain algorithm for community detection in graphs'
 with open('README.rst') as f:
     LONG_DESCRIPTION = f.read()
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 AUTHOR = 'Alexandre Hollocou'
 AUTHOR_EMAIL = 'alexandre@hollocou.fr'
 URL = 'http://github.com/ahollocou/cylouvain'
