@@ -1,5 +1,8 @@
-from libc.stdlib cimport malloc, free
+# Fast implementation of the Louvain algorithm.
+# Author: Alexandre Hollocou <alexandre@hollocou.fr>
+# License: 3-clause BSD
 
+from libc.stdlib cimport malloc, free
 from libcpp.vector cimport vector
 from libcpp.map cimport map
 

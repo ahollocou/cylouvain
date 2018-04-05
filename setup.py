@@ -1,6 +1,21 @@
+#! /usr/bin/env python
+#
+# Copyright (C) 2018 Alexandre Hollocou <alexandre@hollocou.fr>
+# License: 3-clause BSD
+
 from setuptools import setup
 from distutils.core import Extension
 from setuptools.command.build_ext import build_ext as _build_ext
+
+DISTNAME = 'cylouvain'
+DESCRIPTION = 'Cython implementation of the classic Louvain algorithm for community detection in graphs'
+with open('README.rst') as f:
+    LONG_DESCRIPTION = f.read()
+VERSION = '0.2.0'
+AUTHOR = 'Alexandre Hollocou'
+AUTHOR_EMAIL = 'alexandre@hollocou.fr'
+URL = 'http://github.com/ahollocou/cylouvain'
+LICENSE = 'new BSD'
 
 try:
     from Cython.Build import cythonize
@@ -28,13 +43,14 @@ extensions = [
 if USE_CYTHON:
     extensions = cythonize(extensions)
 
-setup(name='cylouvain',
-      version='0.1.0',
-      description='Cython implementation of the classic Louvain algorithm for community detection in graphs',
-      url='http://github.com/ahollocou/cylouvain',
-      author='Alexandre Hollocou',
-      author_email='alexandre@hollocou.fr',
-      license='new BSD',
+setup(name=DISTNAME,
+      version=VERSION,
+      description=DESCRIPTION,
+      long_description=LONG_DESCRIPTION,
+      author=AUTHOR,
+      author_email=AUTHOR_EMAIL,
+      url=URL,
+      license=LICENSE,
       packages=['cylouvain'],
       setup_requires=['numpy'],
       cmdclass={'build_ext': build_ext},
