@@ -10,7 +10,11 @@ matrix:
       language: generic
       env: PIP=pip2
 
+env:
+  global:
+    - CIBW_SKIP="cp33-*"
+
 script:
   - $PIP install cibuildwheel==0.7.1
-  - $PIP install Cython
+  - $PIP install Cython numpy
   - cibuildwheel --output-dir wheelhouse
