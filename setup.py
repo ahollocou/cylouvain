@@ -11,13 +11,13 @@ DISTNAME = 'cylouvain'
 DESCRIPTION = 'Cython implementation of the classic Louvain algorithm for community detection in graphs'
 with open('README.rst') as f:
     LONG_DESCRIPTION = f.read()
-VERSION = '0.2.1'
+VERSION = '0.2.2'
 AUTHOR = 'Alexandre Hollocou'
 AUTHOR_EMAIL = 'alexandre@hollocou.fr'
 URL = 'http://github.com/ahollocou/cylouvain'
 LICENSE = 'new BSD'
 
-IS_RELEASE = True
+IS_RELEASE = False
 
 if not IS_RELEASE:
     try:
