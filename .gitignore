@@ -10,6 +10,7 @@ build
 .idea
 .virtualenv*
 
+*.eggs
 *.egg-info
 
 *.tar.gz

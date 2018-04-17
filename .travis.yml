@@ -1,0 +1,16 @@
+language: python
+
+matrix:
+  include:
+    - sudo: required
+      services:
+        - docker
+      env: PIP=pip
+    - os: osx
+      language: generic
+      env: PIP=pip2
+
+script:
+  - $PIP install cibuildwheel==0.7.1
+  - $PIP install Cython
+  - cibuildwheel --output-dir wheelhouse
