@@ -2,6 +2,7 @@ environment:
   CIBW_SKIP: cp33-*
 
 install:
+  - cmd: C:\Python36-x64\python.exe -m pip install numpy Cython
   - cmd: C:\Python36-x64\python.exe -m pip install cibuildwheel==0.4.0
   - cmd: touch .cibuildwheel
 build_script:
