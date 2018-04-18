@@ -19,7 +19,6 @@ env:
     - TWINE_USERNAME=ahollocou
 
 script:
-  - $PIP install cibuildwheel==0.7.1
+  - $PIP install cibuildwheel==0.7.1 twine
   - cibuildwheel --output-dir wheelhouse
-  - python -m pip install twine
   - python -m twine upload --repository-url https://test.pypi.org/legacy/ wheelhouse/*.whl
